@@ -1,0 +1,360 @@
+[ec2-user@ip-172-31-33-20 Anton_SB]$ mkdir ~/Anton
+[ec2-user@ip-172-31-33-20 Anton_SB]$ vim task_Anton.sh
+[ec2-user@ip-172-31-33-20 Anton_SB]$ ls -la
+total 52
+drwxrwxr-x  3 ec2-user ec2-user  252 Aug 14 16:36 .
+drwxrwxr-x 18 ec2-user ec2-user 4096 Aug 14 12:29 ..
+-rwxrwxr-x  1 ec2-user ec2-user  216 Aug  5 12:00 askname.sh
+-rw-rw-r--  1 ec2-user ec2-user 2182 Jul 31 12:19 box.txt
+-rwxrwxr-x  1 ec2-user ec2-user  493 Aug 11 10:38 fullscript.sh
+-rwxrwxr-x  1 ec2-user ec2-user  327 Aug  5 12:26 masha_shi
+-rwxrwxr-x  1 ec2-user ec2-user  327 Jul 24 15:19 myfirstbashscript.sh
+-rwxrwxr-x  1 ec2-user ec2-user  194 Aug  5 12:22 new.sh
+-rw-rw-r--  1 ec2-user ec2-user   20 Aug 10 20:08 os_info.txt
+-rw-rw-r--  1 ec2-user ec2-user   13 Aug 10 20:08 os_name.txt
+-rw-rw-r--  1 ec2-user ec2-user 1154 Aug 10 20:08 processor_info.txt
+drwxrwxr-x  2 ec2-user ec2-user    6 Aug  5 12:27 script
+-rwxrw-r--  1 ec2-user ec2-user  304 Aug 10 20:07 sleeper.sh
+-rw-rw-r--  1 ec2-user ec2-user  141 Aug 14 16:36 task_Anton.sh
+-rwxrwxr-x  1 ec2-user ec2-user   31 Aug  7 11:50 today.sh
+[ec2-user@ip-172-31-33-20 Anton_SB]$ chmod task_Anton.sh
+chmod: missing operand after ‘task_Anton.sh’
+Try 'chmod --help' for more information.
+[ec2-user@ip-172-31-33-20 Anton_SB]$ chmod +x ~/Anton/task_Anton.sh
+chmod: cannot access ‘/home/ec2-user/Anton/task_Anton.sh’: No such file or directory
+[ec2-user@ip-172-31-33-20 Anton_SB]$ chmod +x task_Anton.sh
+[ec2-user@ip-172-31-33-20 Anton_SB]$ ls -la
+total 52
+drwxrwxr-x  3 ec2-user ec2-user  252 Aug 14 16:36 .
+drwxrwxr-x 18 ec2-user ec2-user 4096 Aug 14 12:29 ..
+-rwxrwxr-x  1 ec2-user ec2-user  216 Aug  5 12:00 askname.sh
+-rw-rw-r--  1 ec2-user ec2-user 2182 Jul 31 12:19 box.txt
+-rwxrwxr-x  1 ec2-user ec2-user  493 Aug 11 10:38 fullscript.sh
+-rwxrwxr-x  1 ec2-user ec2-user  327 Aug  5 12:26 masha_shi
+-rwxrwxr-x  1 ec2-user ec2-user  327 Jul 24 15:19 myfirstbashscript.sh
+-rwxrwxr-x  1 ec2-user ec2-user  194 Aug  5 12:22 new.sh
+-rw-rw-r--  1 ec2-user ec2-user   20 Aug 10 20:08 os_info.txt
+-rw-rw-r--  1 ec2-user ec2-user   13 Aug 10 20:08 os_name.txt
+-rw-rw-r--  1 ec2-user ec2-user 1154 Aug 10 20:08 processor_info.txt
+drwxrwxr-x  2 ec2-user ec2-user    6 Aug  5 12:27 script
+-rwxrw-r--  1 ec2-user ec2-user  304 Aug 10 20:07 sleeper.sh
+-rwxrwxr-x  1 ec2-user ec2-user  141 Aug 14 16:36 task_Anton.sh
+-rwxrwxr-x  1 ec2-user ec2-user   31 Aug  7 11:50 today.sh
+[ec2-user@ip-172-31-33-20 Anton_SB]$ ./task_Anton.sh
+[ec2-user@ip-172-31-33-20 Anton_SB]$ cat task_Anton.sh
+#!/bin/bash
+for i in {1..10}
+do
+FILE_NUM=$(printf "%02d" $1)
+DATE=$(date +"%d%m%y")
+TOUCH_FILE="${FILE_NUM}${DATE}"
+touch "$TOUCH_FILE"
+done
+[ec2-user@ip-172-31-33-20 Anton_SB]$ vim  task_Anton.sh
+[ec2-user@ip-172-31-33-20 Anton_SB]$ cat task_Anton.sh
+#!/bin/bash
+for i in {1..10}
+do
+FILE_NUM=$(printf "%02d" $i)
+DATE=$(date +"%d%m%y")
+TOUCH_FILE="${FILE_NUM}${DATE}.txt"
+touch "$TOUCH_FILE"
+done
+[ec2-user@ip-172-31-33-20 Anton_SB]$ ./task_Anton.sh
+[ec2-user@ip-172-31-33-20 Anton_SB]$ pwd
+/opt/21052024_morning/Anton_SB
+[ec2-user@ip-172-31-33-20 Anton_SB]$ mkdir Anton
+[ec2-user@ip-172-31-33-20 Anton_SB]$ la -la
+-bash: la: command not found
+[ec2-user@ip-172-31-33-20 Anton_SB]$ ls -al
+total 56
+drwxrwxr-x  4 ec2-user ec2-user 4096 Aug 14 16:58 .
+drwxrwxr-x 18 ec2-user ec2-user 4096 Aug 14 12:29 ..
+-rw-rw-r--  1 ec2-user ec2-user    0 Aug 14 16:45 00140824
+-rw-rw-r--  1 ec2-user ec2-user    0 Aug 14 16:52 01140824.txt
+-rw-rw-r--  1 ec2-user ec2-user    0 Aug 14 16:52 02140824.txt
+-rw-rw-r--  1 ec2-user ec2-user    0 Aug 14 16:52 03140824.txt
+-rw-rw-r--  1 ec2-user ec2-user    0 Aug 14 16:52 04140824.txt
+-rw-rw-r--  1 ec2-user ec2-user    0 Aug 14 16:52 05140824.txt
+-rw-rw-r--  1 ec2-user ec2-user    0 Aug 14 16:52 06140824.txt
+-rw-rw-r--  1 ec2-user ec2-user    0 Aug 14 16:52 07140824.txt
+-rw-rw-r--  1 ec2-user ec2-user    0 Aug 14 16:52 08140824.txt
+-rw-rw-r--  1 ec2-user ec2-user    0 Aug 14 16:52 09140824.txt
+-rw-rw-r--  1 ec2-user ec2-user    0 Aug 14 16:52 10140824.txt
+drwxrwxr-x  2 ec2-user ec2-user    6 Aug 14 16:58 Anton
+-rwxrwxr-x  1 ec2-user ec2-user  216 Aug  5 12:00 askname.sh
+-rw-rw-r--  1 ec2-user ec2-user 2182 Jul 31 12:19 box.txt
+-rwxrwxr-x  1 ec2-user ec2-user  493 Aug 11 10:38 fullscript.sh
+-rwxrwxr-x  1 ec2-user ec2-user  327 Aug  5 12:26 masha_shi
+-rwxrwxr-x  1 ec2-user ec2-user  327 Jul 24 15:19 myfirstbashscript.sh
+-rwxrwxr-x  1 ec2-user ec2-user  194 Aug  5 12:22 new.sh
+-rw-rw-r--  1 ec2-user ec2-user   20 Aug 10 20:08 os_info.txt
+-rw-rw-r--  1 ec2-user ec2-user   13 Aug 10 20:08 os_name.txt
+-rw-rw-r--  1 ec2-user ec2-user 1154 Aug 10 20:08 processor_info.txt
+drwxrwxr-x  2 ec2-user ec2-user    6 Aug  5 12:27 script
+-rwxrw-r--  1 ec2-user ec2-user  304 Aug 10 20:07 sleeper.sh
+-rwxrwxr-x  1 ec2-user ec2-user  145 Aug 14 16:52 task_Anton.sh
+-rwxrwxr-x  1 ec2-user ec2-user   31 Aug  7 11:50 today.sh
+[ec2-user@ip-172-31-33-20 Anton_SB]$ mv task_Anton.sh Anton/
+[ec2-user@ip-172-31-33-20 Anton_SB]$ ls -al
+total 52
+drwxrwxr-x  4 ec2-user ec2-user 4096 Aug 14 17:02 .
+drwxrwxr-x 18 ec2-user ec2-user 4096 Aug 14 12:29 ..
+-rw-rw-r--  1 ec2-user ec2-user    0 Aug 14 16:45 00140824
+-rw-rw-r--  1 ec2-user ec2-user    0 Aug 14 16:52 01140824.txt
+-rw-rw-r--  1 ec2-user ec2-user    0 Aug 14 16:52 02140824.txt
+-rw-rw-r--  1 ec2-user ec2-user    0 Aug 14 16:52 03140824.txt
+-rw-rw-r--  1 ec2-user ec2-user    0 Aug 14 16:52 04140824.txt
+-rw-rw-r--  1 ec2-user ec2-user    0 Aug 14 16:52 05140824.txt
+-rw-rw-r--  1 ec2-user ec2-user    0 Aug 14 16:52 06140824.txt
+-rw-rw-r--  1 ec2-user ec2-user    0 Aug 14 16:52 07140824.txt
+-rw-rw-r--  1 ec2-user ec2-user    0 Aug 14 16:52 08140824.txt
+-rw-rw-r--  1 ec2-user ec2-user    0 Aug 14 16:52 09140824.txt
+-rw-rw-r--  1 ec2-user ec2-user    0 Aug 14 16:52 10140824.txt
+drwxrwxr-x  2 ec2-user ec2-user   27 Aug 14 17:02 Anton
+-rwxrwxr-x  1 ec2-user ec2-user  216 Aug  5 12:00 askname.sh
+-rw-rw-r--  1 ec2-user ec2-user 2182 Jul 31 12:19 box.txt
+-rwxrwxr-x  1 ec2-user ec2-user  493 Aug 11 10:38 fullscript.sh
+-rwxrwxr-x  1 ec2-user ec2-user  327 Aug  5 12:26 masha_shi
+-rwxrwxr-x  1 ec2-user ec2-user  327 Jul 24 15:19 myfirstbashscript.sh
+-rwxrwxr-x  1 ec2-user ec2-user  194 Aug  5 12:22 new.sh
+-rw-rw-r--  1 ec2-user ec2-user   20 Aug 10 20:08 os_info.txt
+-rw-rw-r--  1 ec2-user ec2-user   13 Aug 10 20:08 os_name.txt
+-rw-rw-r--  1 ec2-user ec2-user 1154 Aug 10 20:08 processor_info.txt
+drwxrwxr-x  2 ec2-user ec2-user    6 Aug  5 12:27 script
+-rwxrw-r--  1 ec2-user ec2-user  304 Aug 10 20:07 sleeper.sh
+-rwxrwxr-x  1 ec2-user ec2-user   31 Aug  7 11:50 today.sh
+[ec2-user@ip-172-31-33-20 Anton_SB]$ cd Anton
+[ec2-user@ip-172-31-33-20 Anton]$ tree
+.
+  |- task_Anton.sh
+[ec2-user@ip-172-31-33-20 Anton]$ cd Anton_SB
+-bash: cd: Anton_SB: No such file or directory
+[ec2-user@ip-172-31-33-20 Anton]$ cd ../Anton_SB
+-bash: cd: ../Anton_SB: No such file or directory
+[ec2-user@ip-172-31-33-20 Anton]$ cd /opt/21052024_morning/Anton_SB
+[ec2-user@ip-172-31-33-20 Anton_SB]$ tree
+.
+  |- myfirstbashscript.sh
+  |- box.txt
+  |- askname.sh
+  |- new.sh
+  |- masha_shi
+  |- script
+  |- today.sh
+  |- processor_info.txt
+  |- os_info.txt
+  |- os_name.txt
+  |- 04140824.txt
+  |- 05140824.txt
+  |- 06140824.txt
+  |- 07140824.txt
+  |- 08140824.txt
+  |- 09140824.txt
+  |- 10140824.txt
+  |- Anton
+  |  |- task_Anton.sh
+  |- sleeper.sh
+  |- fullscript.sh
+  |- 00140824
+  |- 01140824.txt
+  |- 02140824.txt
+  |- 03140824.txt
+[ec2-user@ip-172-31-33-20 Anton_SB]$ cd Anton
+[ec2-user@ip-172-31-33-20 Anton]$ chmod +x task_Anton.sh
+[ec2-user@ip-172-31-33-20 Anton]$ ./task_Anton.sh
+[ec2-user@ip-172-31-33-20 Anton]$ ls -l
+total 4
+-rw-rw-r-- 1 ec2-user ec2-user   0 Aug 14 17:07 01140824.txt
+-rw-rw-r-- 1 ec2-user ec2-user   0 Aug 14 17:07 02140824.txt
+-rw-rw-r-- 1 ec2-user ec2-user   0 Aug 14 17:07 03140824.txt
+-rw-rw-r-- 1 ec2-user ec2-user   0 Aug 14 17:07 04140824.txt
+-rw-rw-r-- 1 ec2-user ec2-user   0 Aug 14 17:07 05140824.txt
+-rw-rw-r-- 1 ec2-user ec2-user   0 Aug 14 17:07 06140824.txt
+-rw-rw-r-- 1 ec2-user ec2-user   0 Aug 14 17:07 07140824.txt
+-rw-rw-r-- 1 ec2-user ec2-user   0 Aug 14 17:07 08140824.txt
+-rw-rw-r-- 1 ec2-user ec2-user   0 Aug 14 17:07 09140824.txt
+-rw-rw-r-- 1 ec2-user ec2-user   0 Aug 14 17:07 10140824.txt
+-rwxrwxr-x 1 ec2-user ec2-user 145 Aug 14 16:52 task_Anton.sh
+[ec2-user@ip-172-31-33-20 Anton]$ crontab -e
+crontab: installing new crontab
+crontab: installing new crontab
+You have new mail in /var/spool/mail/ec2-user
+[ec2-user@ip-172-31-33-20 Anton]$ crontab -l
+
+
+*/15 * * * * /opt/21052924_morning/Anton/task_Anton.sh
+
+
+
+# *3/15 * * * * /opt/250324_evening/IrinaKis/taskIRINA1.sh >> /opt/250324_evening/IrinaKis/logs1.log
+# */15 * * * * /opt/260324_morning/elena/taskELENA.sh
+# */15 * * * * /opt/250324_evening/Vdream/taskDMITRIJ.sh
+# */15 * * * * /opt/260324_morning/mariia_shi/taskMARIA.sh
+# */15 * * * * /opt/260324_morning/Andrii_F/taskAndrii.sh
+# */15 * * * * /opt/260324_morning/Beidel/taskBeidel.sh
+# */15 * * * * /opt/260324_morning/iliaBololo/taskIlia.sh
+
+# */15 * * * *  /opt/260324_morning/PokazachenkoIryna/taskIrynaP.sh
+# */15 * * * * /opt/260324_morning/Margot/taskMargot.sh
+# 0 0 1 * * /opt/260324_morning/PokazachenkoIryna/script0706.sh
+
+# 55 11 07 08 * /opt/21052024_morning/Olga_Ziabko/today.sh
+
+# 0 1 * * * /opt/21052024_morning/Olga_Ziabko/archive1.sh
+
+#Natalia_Gordiyenko 130824
+15 * * * * /opt/21052024_morning/Natalia_Gordiyenko/task_Nata.sh
+
+[ec2-user@ip-172-31-33-20 Anton]$ crontab -e
+crontab: installing new crontab
+crontab: installing new crontab
+[ec2-user@ip-172-31-33-20 Anton]$ crontab -l
+
+
+*/15 * * * * /opt/21052024_morning/Anton/task_Anton.sh
+
+
+
+# *3/15 * * * * /opt/250324_evening/IrinaKis/taskIRINA1.sh >> /opt/250324_evening/IrinaKis/logs1.log
+# */15 * * * * /opt/260324_morning/elena/taskELENA.sh
+# */15 * * * * /opt/250324_evening/Vdream/taskDMITRIJ.sh
+# */15 * * * * /opt/260324_morning/mariia_shi/taskMARIA.sh
+# */15 * * * * /opt/260324_morning/Andrii_F/taskAndrii.sh
+# */15 * * * * /opt/260324_morning/Beidel/taskBeidel.sh
+# */15 * * * * /opt/260324_morning/iliaBololo/taskIlia.sh
+
+# */15 * * * *  /opt/260324_morning/PokazachenkoIryna/taskIrynaP.sh
+# */15 * * * * /opt/260324_morning/Margot/taskMargot.sh
+# 0 0 1 * * /opt/260324_morning/PokazachenkoIryna/script0706.sh
+
+# 55 11 07 08 * /opt/21052024_morning/Olga_Ziabko/today.sh
+
+# 0 1 * * * /opt/21052024_morning/Olga_Ziabko/archive1.sh
+
+#Natalia_Gordiyenko 130824
+15 * * * * /opt/21052024_morning/Natalia_Gordiyenko/task_Nata.sh
+
+[ec2-user@ip-172-31-33-20 Anton]$ crontab -e
+crontab: installing new crontab
+crontab: installing new crontab
+[ec2-user@ip-172-31-33-20 Anton]$ crontab -l
+
+
+*/15 * * * * /opt/21052024_morning/Anton_SB/Anton/task_Anton.sh
+
+
+
+# *3/15 * * * * /opt/250324_evening/IrinaKis/taskIRINA1.sh >> /opt/250324_evening/IrinaKis/logs1.log
+# */15 * * * * /opt/260324_morning/elena/taskELENA.sh
+# */15 * * * * /opt/250324_evening/Vdream/taskDMITRIJ.sh
+# */15 * * * * /opt/260324_morning/mariia_shi/taskMARIA.sh
+# */15 * * * * /opt/260324_morning/Andrii_F/taskAndrii.sh
+# */15 * * * * /opt/260324_morning/Beidel/taskBeidel.sh
+# */15 * * * * /opt/260324_morning/iliaBololo/taskIlia.sh
+
+# */15 * * * *  /opt/260324_morning/PokazachenkoIryna/taskIrynaP.sh
+# */15 * * * * /opt/260324_morning/Margot/taskMargot.sh
+# 0 0 1 * * /opt/260324_morning/PokazachenkoIryna/script0706.sh
+
+# 55 11 07 08 * /opt/21052024_morning/Olga_Ziabko/today.sh
+
+# 0 1 * * * /opt/21052024_morning/Olga_Ziabko/archive1.sh
+
+#Natalia_Gordiyenko 130824
+15 * * * * /opt/21052024_morning/Natalia_Gordiyenko/task_Nata.sh
+
+[ec2-user@ip-172-31-33-20 Anton]$ ls -la
+total 8
+drwxrwxr-x 2 ec2-user ec2-user  227 Aug 14 17:07 .
+drwxrwxr-x 4 ec2-user ec2-user 4096 Aug 14 17:02 ..
+-rw-rw-r-- 1 ec2-user ec2-user    0 Aug 14 17:07 01140824.txt
+-rw-rw-r-- 1 ec2-user ec2-user    0 Aug 14 17:07 02140824.txt
+-rw-rw-r-- 1 ec2-user ec2-user    0 Aug 14 17:07 03140824.txt
+-rw-rw-r-- 1 ec2-user ec2-user    0 Aug 14 17:07 04140824.txt
+-rw-rw-r-- 1 ec2-user ec2-user    0 Aug 14 17:07 05140824.txt
+-rw-rw-r-- 1 ec2-user ec2-user    0 Aug 14 17:07 06140824.txt
+-rw-rw-r-- 1 ec2-user ec2-user    0 Aug 14 17:07 07140824.txt
+-rw-rw-r-- 1 ec2-user ec2-user    0 Aug 14 17:07 08140824.txt
+-rw-rw-r-- 1 ec2-user ec2-user    0 Aug 14 17:07 09140824.txt
+-rw-rw-r-- 1 ec2-user ec2-user    0 Aug 14 17:07 10140824.txt
+-rwxrwxr-x 1 ec2-user ec2-user  145 Aug 14 16:52 task_Anton.sh
+[ec2-user@ip-172-31-33-20 Anton]$ crontab -e
+crontab: installing new crontab
+crontab: installing new crontab
+[ec2-user@ip-172-31-33-20 Anton]$ crontab -l
+
+
+*/15 * * * * /opt/21052024_morning/Anton_SB/Anton/task_Anton.sh >> /opt/21052024_morning/Anton_SB/Anton/task_Anton.log 2>&1
+
+
+
+# *3/15 * * * * /opt/250324_evening/IrinaKis/taskIRINA1.sh >> /opt/250324_evening/IrinaKis/logs1.log
+# */15 * * * * /opt/260324_morning/elena/taskELENA.sh
+# */15 * * * * /opt/250324_evening/Vdream/taskDMITRIJ.sh
+# */15 * * * * /opt/260324_morning/mariia_shi/taskMARIA.sh
+# */15 * * * * /opt/260324_morning/Andrii_F/taskAndrii.sh
+# */15 * * * * /opt/260324_morning/Beidel/taskBeidel.sh
+# */15 * * * * /opt/260324_morning/iliaBololo/taskIlia.sh
+
+# */15 * * * *  /opt/260324_morning/PokazachenkoIryna/taskIrynaP.sh
+# */15 * * * * /opt/260324_morning/Margot/taskMargot.sh
+# 0 0 1 * * /opt/260324_morning/PokazachenkoIryna/script0706.sh
+
+# 55 11 07 08 * /opt/21052024_morning/Olga_Ziabko/today.sh
+
+# 0 1 * * * /opt/21052024_morning/Olga_Ziabko/archive1.sh
+
+#Natalia_Gordiyenko 130824
+15 * * * * /opt/21052024_morning/Natalia_Gordiyenko/task_Nata.sh
+
+[ec2-user@ip-172-31-33-20 Anton]$ crontab -e
+crontab: no changes made to crontab
+[ec2-user@ip-172-31-33-20 Anton]$ crontab -e
+crontab: no changes made to crontab
+crontab: no changes made to crontab
+[ec2-user@ip-172-31-33-20 Anton]$ crontab -e
+crontab: no changes made to crontab
+[ec2-user@ip-172-31-33-20 Anton]$ crontab -e
+crontab: installing new crontab
+[ec2-user@ip-172-31-33-20 Anton]$ crontab -l
+
+# *3/15 * * * * /opt/250324_evening/IrinaKis/taskIRINA1.sh >> /opt/250324_evening/IrinaKis/logs1.log
+# */15 * * * * /opt/260324_morning/elena/taskELENA.sh
+# */15 * * * * /opt/250324_evening/Vdream/taskDMITRIJ.sh
+# */15 * * * * /opt/260324_morning/mariia_shi/taskMARIA.sh
+# */15 * * * * /opt/260324_morning/Andrii_F/taskAndrii.sh
+# */15 * * * * /opt/260324_morning/Beidel/taskBeidel.sh
+# */15 * * * * /opt/260324_morning/iliaBololo/taskIlia.sh
+
+# */15 * * * *  /opt/260324_morning/PokazachenkoIryna/taskIrynaP.sh
+# */15 * * * * /opt/260324_morning/Margot/taskMargot.sh
+# 0 0 1 * * /opt/260324_morning/PokazachenkoIryna/script0706.sh
+
+# 55 11 07 08 * /opt/21052024_morning/Olga_Ziabko/today.sh
+
+# 0 1 * * * /opt/21052024_morning/Olga_Ziabko/archive1.sh
+
+#Natalia_Gordiyenko 130824
+15 * * * * /opt/21052024_morning/Natalia_Gordiyenko/task_Nata.sh
+
+*/15 * * * * /opt/21052024_morning/Anton_SB/Anton/task_Anton.sh >> /opt/21052024_morning/Anton_SB/Anton/task_Anton.log 2>&1
+[ec2-user@ip-172-31-33-20 Anton]$ sudo service cron status
+Redirecting to /bin/systemctl status cron.service
+Unit cron.service could not be found.
+[ec2-user@ip-172-31-33-20 Anton]$ dpkg -l | grep cron
+-bash: dpkg: command not found
+[ec2-user@ip-172-31-33-20 Anton]$ ./task_Anton.sh
+[ec2-user@ip-172-31-33-20 Anton]$ cat task_Anton.sh
+#!/bin/bash
+for i in {1..10}
+do
+FILE_NUM=$(printf "%02d" $i)
+DATE=$(date +"%d%m%y")
+TOUCH_FILE="${FILE_NUM}${DATE}.txt"
+touch "$TOUCH_FILE"
+done
+[ec2-user@ip-172-31-33-20 Anton]$ exit
+logout
+Connection to linux.telran-edu.de closed.
+PS C:\Users\pc>
